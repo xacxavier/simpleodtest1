@@ -31,8 +31,11 @@ function enableCam(event) {
     event.target.classList.add('removed');  
     
     // getUsermedia parameters to force video but not audio.
+    // getUsermedia parameters to force video but not audio and use the rear camera.
     const constraints = {
-      video: true
+      video: {
+        facingMode: 'environment' //ask for the rear camera
+      }
     };
   
     // Activate the webcam stream.
